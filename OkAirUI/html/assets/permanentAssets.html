@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<base href="/OkAirUI/"/>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="row">
+				<form id="divSearchForm" class="col-md-12">
+					<div>
+						<label for="spanCategoryGroup">资产分类</label>
+						<span id="spanCategoryGroup">
+							<select id="selectCategory1">
+								<option value="-1">全部</option>
+							</select>
+							<select id='selectCategory2'>
+								<option value="-1">全部</option>
+							</select>
+						</span>
+					</div>
+					<div>
+						<label for="assetsName">资产名称</label>
+						<input type="text" id="assetsName"/>
+					</div>
+					<div>
+						<label for="assetsCode">资产编号</label>
+						<input type="text" id="assetsCode"/>
+					</div>
+					<div>
+						<label for="city">城市</label>
+						<select id="city"><option value="-1">全部</option></select>
+					</div>
+					<div>
+						<label for="address">地址</label>
+						<input type="text" id="address"/>
+					</div>
+					<div>
+						<label for="equityType">产权类型</label>
+						<select id="equityType"><option value="-1">全部</option></select>
+					</div>
+					<div>
+						<label for="unit">登记所属单位</label>
+						<input type="text" id="unit"/>
+					</div>
+					<div>
+						<button type="button" id="btnSearch" class="btn-primary">
+							<span class="glyphicon glyphicon-search">检索search</span>
+						</button>
+					</div>
+				</form>
+			</div>
+			<div class="row">
+				<div class="col-md-10">
+					<div id="toolsButtons">
+						<button id="btnAddAdd" type="button" class="btn-success">
+							<span class="glyphicon glyphicon-plus">新增资产Add</span>
+						</button>
+						<button type="button" class="btn-primary">
+							<span class="glyphicon glyphicon-download-alt">资产入库Instock</span>
+						</button>
+						<button type="button" class="btn-warning">
+							<span class="glyphicon glyphicon-edit">编辑资产Edit</span>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-10">
+					<table id="tbResult">
+						<thead>
+							<tr>
+								<th data-halign="center" data-valign="middle">
+									<span class="glyphicon glyphicon-tags">资产编号</span>
+								</th>
+								<th data-halign="center" data-valign="middle">资产名称</th>
+								<th data-halign="center" data-valign="middle">所在城市</th>
+								<th data-halign="center" data-valign="middle">购买单位</th>
+								<th data-halign="center" data-valign="middle">登记面积</th>
+								<th data-halign="center" data-valign="middle">产权类型</th>
+							</tr>
+						</thead>
+						<tbody>
+							
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div id="divAssetsInfo" tabindex="-1" role="dialog" aria-labelledby="assetsInfoTitle" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title" id="assetsInfoTitle"><span class="glyphicon glyphicon-equalizer"></span>资产信息</h4>
+					</div>
+					<div class="modal-body">
+						<div id="formAssetsInfo">
+							<!--<input type="hidden" id="hidAssetsId" value="" />-->
+							<div id="divEditAlert" role="alert"></div>
+							<div>
+								<label for="tbxAssetsCodeEdit">资产编号:</label>
+								<div class="input-group">
+									<input type="text" id="tbxAssetsCodeEdit" readonly="readonly"/>
+								</div>
+							</div>
+							<div>
+								<label for="tbxAssetsNameEdit">资产名称:</label>
+								<div class="input-group">
+									<input type="text" id="tbxAssetsNameEdit" required="required"/>
+									<span class="input-group-addon">
+									<span class="glyphicon glyphicon-asterisk"></span>
+									</span>
+								</div>
+							</div>
+							<div>
+								<label for="selectCategoryEdit1">资产分类:</label>
+								<div class="input-group">
+									<span>
+										<select id="selectCategoryEdit1">
+											<option value="-1">全部</option>
+										</select>
+										<select id='selectCategoryEdit2'>
+											<option value="-1">全部</option>
+										</select>
+									</span>
+								</div>
+							</div>
+							<div>
+								<label for="cityEdit">所在城市:</label>
+								<div class="input-group">
+									<select id="cityEdit"><option value="-1">全部</option></select>
+								</div>
+							</div>
+							<div>
+								<label for="addressEdit">具体地址:</label>
+								<div class="input-group">
+									<input type="text" id="addressEdit" required="required"/>
+									<span class="input-group-addon">
+									<span class="glyphicon glyphicon-asterisk"></span>
+									</span>
+								</div>
+							</div>
+							<div>
+								<label for="scaleEdit">出资比例:</label>
+								<div class="input-group">
+									<span class="input-group-addon">%</span>
+									<input type="number" min="0" id="scaleEdit" required="required" />
+									<span class="input-group-addon">
+									<span class="glyphicon glyphicon-asterisk"></span>
+									</span>
+								</div>
+							</div>
+							<div>
+								<label for="utilEdit">登记所属单位:</label>
+								<div class="input-group">
+									<input type="text" id="utilEdit" required="required"/>
+									<span class="input-group-addon">
+									<span class="glyphicon glyphicon-asterisk"></span>
+									</span>
+								</div>
+							</div>
+							<div>
+								<label for="areaEdit">登记面积:</label>
+								<div class="input-group">
+									<input type="text" id="areaEdit" required="required"/>
+									<span class="input-group-addon">
+									<span class="glyphicon glyphicon-asterisk"></span>
+									</span>
+								</div>
+							</div>
+							<div>
+								<label for="equityTypeEdit">产权类型:</label>
+								<div class="input-group">
+									<select id="equityTypeEdit"><option value="-1">全部</option></select>
+								</div>
+							</div>
+							<div>
+								<label for="commentEdit">其他说明:</label>
+								<div class="input-group">
+									<textarea  rows="2" id="commentEdit" /></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn-primary"  id="btnAdd">
+							<span class="glyphicon glyphicon-floppy-save">保存save</span>
+						</button>
+						<button type="button" class="btn-default" data-dismiss="modal" id="btnCancel">
+							<span class="glyphicon glyphicon-remove">取消cancel</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/bower_components/requirejs/require.js" data-main = "js/logic/permanentAssets"></script>
+</html>

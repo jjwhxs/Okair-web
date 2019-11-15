@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>奥凯航空资产管理系统</title>
+<base href="/OkAirUI/">
+</head>
+<body>
+	<div class="container-fluid">
+		<!--上部信息-->
+		<div class="row page-header">
+			<div class="col-md-12">
+				<h1 style="float:left;">奥凯航空资产管理系统</h1><!--可以不用浮动，普通的左右分隔即可，适当在右部分加点边距-->
+				<div style="float:right;font-size: 120%;margin-right: 80px;margin-top: 35px;">
+					<span class="glyphicon glyphicon-time"></span><span id="currentTime"></span>&nbsp;&nbsp;&nbsp;
+					<span class="glyphicon glyphicon-user"><b>欢迎您,姜家玮</b></span>&nbsp;&nbsp;
+					<button class="btn btn-default"><span class="glyphicon glyphicon-off">注销</span></button>
+				</div>
+			</div>
+		</div>
+		<!--下部信息-->
+		<div class="row"><!--上下用row,左右用字段分隔-->
+			<div class="col-md-2">
+				<div id="tree">
+					
+				</div>
+			</div>
+			<div class="col-md-10">
+				<div class="row">
+					<div class="col-md-12">
+						<ol id="breadcrumb" class="breadcrumb">
+							<li><a id="currentTime" href="html/mainPage.html" target="contentFrame">首页</a></li>
+						</ol>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="embed-responsive embed-responsive-16by9">
+								<iframe id="contentFrame" name="contentFrame" class="embed-responsive-item" src="html/mainPage.html"></iframe>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="js/bower_components/requirejs/require.js" data-main="js/logic/index"></script>
+</html>
